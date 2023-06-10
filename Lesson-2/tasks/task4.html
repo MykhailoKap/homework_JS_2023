@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<h1>Задача №4</h1>
+
+	<p>
+		Дано вартість одиниці товару і кількість. Знайти загальну вартість та ПДВ (5% від загальної
+		вартості).
+	</p>
+
+
+
+	<script>
+
+		// Вводимо данні 
+		let itemPrice = parseFloat(prompt('Вартість товару в грн.:', 0));
+		let amountItems = parseFloat(prompt('Кількість торвару:', 0));
+		const VAT = 5;
+
+
+		// Знаходимо результат
+		let totalPriceItems = itemPrice * amountItems;
+		let amountVat = totalPriceItems * 5 / 100;
+
+		// Виводимо результат
+		document.write(`Загальна вартість товару становить: <span style="color: red;">${totalPriceItems}</span> грн. <br> 
+		ПДВ від загальної вартості становить: <span style="color: red;">${amountVat}</span> грн.`);
+
+
+	</script>
+
+
+
+
+
+
+
+
+</body>
+
+</html>

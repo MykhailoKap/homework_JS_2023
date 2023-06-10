@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<h1>Задача №8</h1>
+
+	<p>
+		Знайти суму випадкового номера місяця (від 1 до 12) та випадкового номера дня (від 0 до 6).
+	</p>
+
+
+
+	<script>
+
+		// Вводимо данні 
+		let minMonthNumber = 1;
+		let maxMonthNumber = 12;
+
+		let minDayNumber = 0;
+		let maxDayNumber = 6;
+
+
+		// Знаходимо результат
+		let randomMonthNumber = minMonthNumber + Math.floor(Math.random() * (maxMonthNumber - minMonthNumber + 1));
+		let randomDayNumber = minDayNumber + Math.floor(Math.random() * (maxDayNumber - minDayNumber + 1));
+		let sum = randomMonthNumber + randomDayNumber;
+
+		// Виводимо результат
+		document.write(`Сума випадкових номерів становить: ${sum}`);
+
+
+
+	</script>
+
+
+
+
+
+
+
+
+</body>
+
+</html>

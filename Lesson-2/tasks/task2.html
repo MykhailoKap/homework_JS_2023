@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<h1>Задача №2</h1>
+
+	<p>
+		Знайти суму, добуток та частку двох дійсних чисел. Результат вивести у формі таблиці
+
+
+	</p>
+
+
+
+	<script>
+
+		// Вводимо данні 
+		let a = parseFloat(prompt('Введіть число А: ', 0));
+		let b = parseFloat(prompt('Введіть число B: ', 0));
+
+
+		// Знаходимо результат
+		let sum = a + b;
+		let numberMultiplication = a * b;
+		let numberDivide = a / b;
+
+
+		// Виводимо результат
+		document.write(`<div style="margin: 100px auto 0; max-width: 800px; padding:50px; background-color: lightblue; border-radius: 10px;">
+
+		<div style="display: flex; justify-content: center; width: 100%;">
+		<div style="color: red; font-size: 20px; border: 1px solid #000; padding: 10px 20px; flex: 0 1 400px">Сума А і В становить:</div>
+		<div style="border: 1px solid #000; padding: 10px 20px; flex: 0 1 300px">${sum}</div>
+		</div>
+
+		<div style="display: flex; justify-content: center;">
+		<div style="color: red; font-size: 20px; border: 1px solid #000; padding: 10px 20px; flex: 0 1 400px">Добуток А і В становить:</div>
+		<div style="border: 1px solid #000; padding: 10px 20px; flex: 0 1 300px">${numberMultiplication}</div>
+		</div>
+
+		<div style="display: flex; justify-content: center;">
+		<div style="color: red; font-size: 20px; border: 1px solid #000; padding: 10px 20px; flex: 0 1 400px">Частка А і В становить:</div>
+		<div style="border: 1px solid #000; padding: 10px 20px; flex: 0 0 300px;">${Number(numberDivide.toFixed(2))}</div>
+		</div>
+
+
+		</div>`);
+
+
+
+
+	</script>
+
+
+
+</body>
+
+</html>

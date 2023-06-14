@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<h1>Задача №3</h1>
+
+	<p>
+		Випадковим чином генерується число від 1 до 5. Спробуйте вгадати число за 2 спроби.
+	</p>
+
+
+
+	<script>
+
+		// Вводимо данні 
+		const minMonthNumber = 1;
+		const maxMonthNumber = 5;
+
+		let randomMonthNumber = minMonthNumber + Math.floor(Math.random() * (maxMonthNumber - minMonthNumber + 1));
+		// console.log(randomMonthNumber);
+
+		let guessNumberOne = parseInt(prompt('Вгадайте яка це цифра ?'));
+		let guessNumberTwo = parseInt(prompt('Маєте ще одну спробу:'));
+
+
+		// Обчислюємо і виводимо результат
+		if (guessNumberOne === randomMonthNumber) {
+			alert('Bingo')
+		} else {
+			if (guessNumberTwo === randomMonthNumber) {
+				alert('Bingo')
+			} else {
+				alert(':(')
+			}
+		}
+
+
+
+
+	</script>
+
+
+
+
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<h1>Задача №5</h1>
+
+	<p>
+		Користувач поступово вводить прибуток магазину за кожен день протягом N тижнів.
+		Знайти загальну величину прибутку та вивести величину прибутку протягом кожного окремого тижня.
+	</p>
+
+
+
+	<script>
+
+		// Вводимо данні 
+
+		let sum = 0;
+
+		const weekAmount = parseInt(prompt('Введіть кількість тижнів'));
+
+
+		// Обчислюємо і виводимо результат
+
+		for (let i = 1; i <= weekAmount; i++) {
+
+			let sumPerWeek = 0;
+			for (let j = 1; j <= 7; j++) {
+				const incomeDaily = parseFloat(prompt(`Введіть величину прибутку ${i} тижня за день ${j} `));
+				sumPerWeek += incomeDaily;
+			}
+
+			document.write(`за тиждень ${i} ви заробили ${sumPerWeek}<br>`)
+
+			sum += sumPerWeek
+
+		}
+
+		document.write(`Загальна сума -  ${sum}`)
+
+	</script>
+
+
+
+
+
+
+
+
+</body>
+
+</html>

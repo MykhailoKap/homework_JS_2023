@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<h1>Задача №4</h1>
+
+	<p>
+		Створити окремі функції, які для 4 чисел знаходять:
+		1) суму;
+		2) добуток;
+		3) середнє арифметичне;
+		4) мінімальне значення.
+	</p>
+
+
+
+	<script>
+
+		// функція для знаходження суми
+		function getSum(num1, num2, num3, num4) {
+			return num1 + num2 + num3 + num4
+		}
+
+		// викликаємо функцію
+		let sum = getSum(2, 3, 5, 8);
+
+		// виводимо результат
+		document.write(`сума складає - ${sum} <br>`);
+
+		// функція для знаходження добутку
+		function getMultiplication(num1, num2, num3, num4) {
+			return num1 * num2 * num3 * num4
+		}
+
+		let multiplication = getMultiplication(3, 5, 4, 6);
+		console.log(multiplication);
+
+		// функція для знаходження середнього арифметичного
+		function getAverageNum(num1, num2, num3, num4) {
+			return (num1 + num2 + num3 + num4) / 4
+		}
+
+		// викликаємо функцію
+		let averageNum = getAverageNum(4, 6, 9, 7)
+
+		// виводимо результат
+		document.write(`середнє арифметичне складає - ${averageNum} <br>`);
+
+
+		// функція для знаходження мінімального значення
+		function getMinNum(num1, num2, num3, num4) {
+
+			let minNum = num1
+			if (minNum > num2) minNum = num2
+			if (minNum > num3) minNum = num3
+			if (minNum > num4) minNum = num4
+
+			return minNum
+		}
+
+		// викликаємо функцію
+		let resultMinNum = getMinNum(3, 11, 4, 5)
+
+		// виводимо результат
+		document.write(`мінімальне значення складає - ${resultMinNum}`);
+
+
+
+
+
+
+
+	</script>
+
+
+
+
+
+
+
+
+</body>
+
+</html>

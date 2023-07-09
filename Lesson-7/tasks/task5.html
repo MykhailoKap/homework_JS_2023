@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<h1>Задача №5</h1>
+
+	<p>
+		Створити функції, які для 3 заданих чисел знаходять декілька результатів:
+		кількість парних, кількість додатних, кількість більших за 100.
+	</p>
+
+
+
+	<script>
+
+		// функція яка знаходить кількість парних чисел
+		function getEvenNumbers() {
+
+			let evenNumbers = 0
+			for (let i = 1; i <= 3; i++) {
+				let userNumber = parseInt(prompt(`Введіть число ${i}`))
+				if (userNumber % 2 === 0)
+					evenNumbers++
+			}
+			return evenNumbers
+		}
+
+		// викликаємо функцію
+		let evenNumbersCount = getEvenNumbers()
+
+
+		// функція яка знаходить кількість додатних
+		function getPositiveNumbers() {
+
+			let positiveNumbers = 0
+			for (let i = 1; i <= 3; i++) {
+				let userNumber = parseInt(prompt(`Введіть число ${i}`))
+				if (userNumber > 0)
+					positiveNumbers++
+			}
+			return positiveNumbers
+		}
+
+		// викликаємо функцію
+		let positiveNumbersCount = getPositiveNumbers()
+
+
+		// функція яка знаходить кількість більших за 100
+		function getNumbersMoreThan100() {
+
+			let numbersMoreThan100 = 0
+			for (let i = 1; i <= 3; i++) {
+				let userNumber = parseInt(prompt(`Введіть число ${i}`))
+				if (userNumber > 100)
+					numbersMoreThan100++
+			}
+			return numbersMoreThan100
+		}
+
+		// викликаємо функцію
+		let numbersCountMoreThan100 = getNumbersMoreThan100()
+
+		// виводимо результат
+		document.write(`Кількість парних - ${evenNumbersCount} <br>
+		Кількість додатних - ${positiveNumbersCount} <br>
+		Кількість більше за 100 - ${numbersCountMoreThan100}`)
+
+	</script>
+
+
+
+
+
+
+
+
+</body>
+
+</html>

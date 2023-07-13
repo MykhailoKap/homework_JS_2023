@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<h1>Задача №4</h1>
+
+	<p>
+		Дано послідовність номерів автомобілів. Підрахувати кількість номерів, які :
+		- починаються на букву «А»;
+		- перша і остання літери співпадають;
+		- складаються з більше ніш 5 символів;
+	</p>
+
+
+
+	<script>
+
+		// масив автомобільних номерів
+		let carNumberPlates = ['AA1234AB', 'BC6OB', 'AE7539AA', 'CT780', 'AA9387BA', 'CA456BA']
+
+		// функція для знаходження кількості номерів, які починаються на А
+		function firstNumberPlateLetter(carNumberPlates) {
+			let count = 0
+			for (let i = 0; i < carNumberPlates.length; i++) {
+				if (carNumberPlates[i][0] === 'A')
+					count++
+			}
+			return count
+		}
+
+		// викликаємо функцію
+		let fisrtLetterCount = firstNumberPlateLetter(carNumberPlates)
+
+
+		// функція для знаходження кількості номерів, у яких перша і остання літери співпадають
+		function getResult(carNumberPlates) {
+			let count = 0
+			for (let i = 0; i < carNumberPlates.length; i++) {
+				if (carNumberPlates[i][0] === carNumberPlates[i][carNumberPlates[i].length - 1])
+					count++
+			}
+			return count
+		}
+
+		// викликаємо функцію
+		let similarFirstAndLastLetters = getResult(carNumberPlates)
+
+
+		// функція для знаходження кількості номерів, які складаються з більше ніж 5 символів
+		function getLongrNumberPlate(carNumberPlates) {
+			let count = 0
+			for (let i = 0; i < carNumberPlates.length; i++) {
+				if (carNumberPlates[i].length > 5)
+					count++
+			}
+			return count
+		}
+
+		// викликаємо функцію
+		let longNumberPlate = getLongrNumberPlate(carNumberPlates)
+
+
+		// виводимо результат
+		document.write(`Кількість атомобільних номерів, які починаються на "А" - ${fisrtLetterCount} <br>
+		Кількість атомобільних номерів, де перша і остання літери співпадають - ${similarFirstAndLastLetters} <br>
+		Кількість атомобільних номерів, які складаються з більше ніш 5 символів - ${longNumberPlate}`)
+
+
+	</script>
+
+
+
+
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<h1>Задача №5</h1>
+
+	<p>
+		Дано послідовність оцінок учня. Підрахувати кількість:
+		- двійок
+		- кількість хороших оцінок(добре, відмінно);
+		- кількість оцінок, які нижче середнього.
+	</p>
+
+
+
+	<script>
+
+		// Масив оцінок учня
+		let gradeList = [4, 3, 4, 4, 5, 2, 3, 4, 5, 2]
+
+		// функція для підрахунку кількості двійок
+		function getBadGrade(gradeList) {
+			let badGrade = 0
+			for (let i = 0; i < gradeList.length; i++) {
+				if (gradeList[i] === 2)
+					badGrade++
+			}
+			return badGrade
+		}
+
+		// викликаємо функцію
+		let badGradeCount = getBadGrade(gradeList)
+
+
+		// // функція для підрахунку кількості хороших оцінок(добре, відмінно)
+		function getGoodGrade(gradeList) {
+			let goodGrade = 0
+			for (let i = 0; i < gradeList.length; i++) {
+				if (gradeList[i] === 4 || gradeList[i] === 5)
+					goodGrade++
+			}
+			return goodGrade
+		}
+
+		// викликаємо функцію
+		let goodGradeCount = getGoodGrade(gradeList)
+
+
+		// функції для підрахунку кількості оцінок, які нижче середнього
+		// функція для підрахунку середнього 
+		function getAverageGrade(gradeList) {
+			let sum = 0
+			for (let i = 0; i < gradeList.length; i++) {
+				sum += gradeList[i]
+			}
+			return sum / gradeList.length
+		}
+
+		// викликаємо функцію
+		let averageGrade = getAverageGrade(gradeList)
+
+
+		// функція для підрахунку кількості оцінок, які нижче середнього
+		function getGradesLessThanAverage(gradeList, averageGrade) {
+			let count = 0
+			for (let i = 0; i < gradeList.length; i++) {
+				if (gradeList[i] < averageGrade)
+					count++
+			}
+			return count
+		}
+
+		// викликаємо функцію
+		let gradesLessThanAverage = getGradesLessThanAverage(gradeList, averageGrade)
+
+		// виводимо результат
+		document.write(`Кількість двійок - ${badGradeCount} <br>
+		кількість хороших оцінок(добре, відмінно) - ${goodGradeCount} <br>
+		кількість оцінок, які нижче середнього - ${gradesLessThanAverage}`)
+
+	</script>
+
+
+
+
+
+
+
+
+</body>
+
+</html>

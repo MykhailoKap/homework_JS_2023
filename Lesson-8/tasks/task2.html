@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<h1>Задача №2</h1>
+
+	<p>
+		Дано масив, який зберігає кількість відвідувачів магазину протягом тижня.Вивести на екран:<br>
+		- номери днів, протягом яких кількість відвідувачів була меншою за 20;<br>
+		- номери днів, коли кількість відвідувачів була мінімальною;<br>
+		- номери днів, коли кількість відвідувачів була максимальною;<br>
+		- загальну кількість клієнтів у робочі дні та окремо загальну кількість днів на вихідних.
+	</p>
+
+	<script>
+
+		// введимо кількість відвідувачів магазину кожного дня протягом тижня
+
+		let customersPerDay = []
+		for (let i = 0; i < 7; i++) {
+			let customersCount = parseInt(prompt(`Введіть кількість відвідувачів магазину за ${i + 1} день`))
+			customersPerDay.push(customersCount)
+		}
+
+
+		// функція, для виведення на екран номерів днів, які менше за 20
+		function customerCountLessThan20(customersPerDay) {
+			let dayNumber = []
+			for (let i = 0; i < customersPerDay.length; i++) {
+				if (customersPerDay[i] < 20) {
+					dayNumber.push(i + 1)
+				}
+			}
+			return dayNumber
+		}
+
+		// викликаємо функцію
+		let daysLessThan20 = customerCountLessThan20(customersPerDay)
+
+
+		// функція, для виведення на екран номерів днів, коли кількість відвідувачів була мінімальною
+		function minCustomerCount(customersPerDay) {
+			let min = customersPerDay[0]
+			for (let i = 0; i < customersPerDay.length; i++) {
+				if (customersPerDay[i] < min) {
+					min = customersPerDay[i]
+				}
+			}
+			return `${customersPerDay.indexOf(min) + 1}`
+		}
+
+		// викликаємо функцію
+		let minCustomerPerDay = minCustomerCount(customersPerDay)
+
+
+		// функція, для виведення на екран номерів днів, коли кількість відвідувачів була максимальною
+		function maxCustomerCount(customersPerDay) {
+			let max = customersPerDay[0]
+			for (let i = 0; i < customersPerDay.length; i++) {
+				if (customersPerDay[i] > max) {
+					max = customersPerDay[i]
+				}
+			}
+			return `${customersPerDay.indexOf(max) + 1}`
+		}
+
+		// викликаємо функцію
+		let maxCustomerPerDay = maxCustomerCount(customersPerDay)
+
+
+		// функція для підрахунку загальної кількості відвідувачів 
+		function getSumCustomersPerDays(customersPerDay, dayStart, dayEnd) {
+			sum = 0
+			for (let i = dayStart; i < dayEnd; i++) {
+				sum += customersPerDay[i]
+			}
+			return sum
+		}
+
+		// викликаємо функцію і отримуємо загальну кількість відвідувачів в робочі дні
+		let sumCustomersPerWorkDays = getSumCustomersPerDays(customersPerDay, 0, 5)
+
+		// викликаємо функцію і отримуємо загальну кількість відвідувачів у вихідні дні
+		let sumCustomersPerWeekend = getSumCustomersPerDays(customersPerDay, 5, 7)
+
+		// виводимо результат
+		document.write(`Номери днів, протягом яких кількість відвідувачів була меншою за 20 - ${daysLessThan20} <br>
+		номери днів, коли кількість відвідувачів була мінімальною - ${minCustomerPerDay} <br>
+		номери днів, коли кількість відвідувачів була максимальною - ${maxCustomerPerDay} <br>
+		загальну кількість клієнтів у робочі дні - ${sumCustomersPerWorkDays}, окремо загальну кількість клієнтів на вихідних - ${sumCustomersPerWeekend}`)
+
+
+
+
+	</script>
+
+
+
+</body>
+
+</html>

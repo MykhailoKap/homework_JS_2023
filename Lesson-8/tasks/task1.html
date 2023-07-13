@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<h1>Задача №1</h1>
+
+	<p>
+		Дано масив, який містить оцінки з К предметів.Знайти середній бал і з’ясувати до якої категорії
+		він відноситься(відмінник, двійочник(має хоча би одну двійку), хорошист(оцінки добре і відмінно),
+		трійочник(є хоча би одна трійка)).
+	</p>
+
+
+
+	<script>
+
+		// функція для створення масива оцінок, введення оцінок оцінки
+		function getArr(gradeCount) {
+			let gradeList = []
+			for (let i = 0; i < gradeCount; i++) {
+				let studentGrade = parseInt(prompt(`Введіть ${i + 1} оцінку`))
+				gradeList.push(studentGrade)
+			}
+			return gradeList
+		}
+
+		// вводимо кількість предметів / оцінок
+		let gradeCount = parseInt(prompt('Введіть кількість предметів / оцінок'))
+
+		// викликаємо функцію 
+		let studentGradeReport = getArr(gradeCount)
+
+
+		// функція для отримання середнього балу
+		function getAverageGrade(studentGradeReport) {
+			sum = 0
+			for (let i = 0; i < studentGradeReport.length; i++) {
+				sum += studentGradeReport[i]
+			}
+			return sum / studentGradeReport.length
+		}
+
+		// викликаємо функцію
+		let averageGrade = getAverageGrade(studentGradeReport)
+
+
+		// функція для отримання мінімальної оцінки
+		function getMinGrade(studentGradeReport) {
+			let minGrade = studentGradeReport[0]
+
+			for (let i = 1; i < studentGradeReport.length; i++) {
+				if (studentGradeReport[i] < minGrade)
+					minGrade = studentGradeReport[i]
+			}
+
+			return minGrade
+		}
+		// викликаємо функцію
+		let minGradeResult = getMinGrade(studentGradeReport)
+
+
+		// функція для виявлення категорії, до якої відноситься студент
+		function getSudentGradeCategory(grade) {
+			let result
+			switch (grade) {
+				case 1:
+				case 2: result = 'двійочник'
+					break;
+				case 3: result = 'трійочник'
+					break;
+				case 4: result = 'хорошист'
+					break;
+				case 5: result = 'відмінник'
+					break;
+				default: result = 'непоправна оцінка'
+					break;
+			}
+			return result
+		}
+
+		// викликаємо функцію
+		let studentGradeCategory = getSudentGradeCategory(minGradeResult)
+
+		// виводимо результат
+		document.write(`Середній бал студента - ${averageGrade.toFixed(2)},
+		він відноситься до категорії - ${studentGradeCategory}`)
+
+	</script>
+
+
+
+
+
+
+
+
+</body>
+
+</html>

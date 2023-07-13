@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<h1>Задача №3</h1>
+
+	<p>
+		Дано масив імен учнів. З’ясувати скільки разів зустрічається ім’я «Іван».
+	</p>
+
+
+	<script>
+
+		// функція для виявлення кількості імені "Іван"
+		function getNameCount(...names) {
+			let nameCount = 0
+			for (let i = 0; i < names.length; i++) {
+				if (names[i] === 'Іван')
+					nameCount++
+			}
+			return nameCount
+		}
+
+		// викликаємо функцію
+		let nameIvanCount = getNameCount('Іванка', 'Костя', 'Максим', 'Іван', 'Оксана', 'Іван')
+
+		// виводимо результат
+		document.write(`Ім"я "Іван" зустрічаєсться ${nameIvanCount} разів`)
+
+
+	</script>
+
+
+
+
+
+
+
+
+</body>
+
+</html>
